@@ -1,0 +1,6 @@
+{
+    "git.allowForcePush": true,
+    "search.useGlobalIgnoreFiles": true,
+    "git.enabled": true,
+    "git.path": "/usr/local/bin/git
+}
