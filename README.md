@@ -1,12 +1,10 @@
 # IPnCIDR
 
-Application designed to aid assessors with breaking down of larger IP and CIDR range and DNS names list given by clients. Sometimes these list are combined with different technologies and targeting requirements, and can become cumbersom. This implementation is designed to aid in such situations.
+Application designed to aid assessors with breaking down of larger IP || CIDR range(s), and DNS name(s) given by users. Sometimes these list are combined with different technologies and targeting requirements, and can become cumbersom. This implementation is designed to aid in such situations.
 
-Users who might not be comfortable with Ruby are encouraged to utilize the compiled Binary contained within this project. The currently contained version matches the origin branch of this project. This will allow you to operate the application and develop with little to no staging time. After yo uhave developed your Module or Plugin, submit a Merge Request and work with the Development team for future rollouts. 
+Users who might not be comfortable with Ruby are encouraged to utilize the compiled Binary contained within this project. The currently contained version matches the origin branch of this project. This will allow you to operate the application and develop with little to no staging time. After you have developed your Module or Plugin, submit a Merge Request and work with the Development team for future rollouts. 
 
-Designed with modularity in mind, plug and play module design, frameworked with consistent application wide calls, internal storage, preliminary OSINT and Information Gathering before kickoff.
-
-Identify issues before loading targeting list into tools and resouces that may consume resources. Aid in the identification of mistargeting ranges or erronious Domains. 
+Designed with modularity in mind utilizing a plug and play design, frameworked with application API calls, internal storage, preliminary OSINT and Information Gathering before kickoff. Identify issues before loading targeting list into tools and resouces that may consume resources. Aid in the identification of mistargeting ranges or erronious Domains. 
 
 Adding modules to the EXE is quite easy. Follow the design requirements of your module and create the file structure in the directory containing the IPnCIDR.exe as required for your module. Execute the binary and these folders and files will be processed and presented as designed. No need to recompile the binary from source.
 
