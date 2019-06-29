@@ -106,3 +106,35 @@ above the code is very simplistic and is just enough to show what is the require
 Development can be from IRB or other IDE of your choice, once your function is ready, its as simple as Copy && Paste inside
 the method call and stowed in the global hash.
 
+__MODULE :ACTION API__
+
+This section is use to give the framework user an interface to interact with your module. This can be optional depending on
+how your module will be utilized. If there is no user interaction with the user, this section can be skipped. Developers are
+also encouraged to create their own menus if required for additional user interactivity outside of the frameworks control.
+
+After execution of the module and all code has been completed, the module will require the user to interact with the framework
+and (re)load target list, or go back to the main menu. In some instances, there is no further interactivity required and the
+module will automatically reload the main menu.
+
+For this example we will create a standard user interactive menu giving two options, Bulk or Single runs:
+
+````ruby
+$mynewplugin[:action] = $r[:system][:app][:default][:action].clone
+$r[:system][:app][:plugins][:addaction].($reversednsstructure, ["Bulk","Bulk word echo function", method(
+  def bulk(userword)
+   userword.each { | eachletter |
+    $mynewplugin[:cmd].(eachletter)
+   }
+  end
+ )
+]
+$r[:system][:app][:plugins][:addaction].($reversednsstructure, ["Single","Single word echo function", method(
+  def single(userword)
+   $mynewplugin[:cmd].(userword)
+  end
+ )
+]
+````
+
+The first thing we will do is build the structure of the dynamic action menu. This API call will create the :action key and value will be set to a hash. This location will be processed further within the framework and automatically generate the format as required.
+
