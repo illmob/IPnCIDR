@@ -1,5 +1,4 @@
 # CONTRIBUTIONS
----
 
 Contributions to the project must follow a specific coding guideline for uniformity. These standards will aid in the overall
 ability to develop and distribute this additional functionality to all users with little to no modifications of the main
