@@ -1,5 +1,5 @@
 # useful for unknown CIDR notation with given host count
-# useful for unknow hostcount for given CIDR notation
+# useful for unknow hostcount with given CIDR notation
 # Can be moved in SYSTEM to ensure it is available at loading
 intc = 1
 temp = {}
