@@ -120,7 +120,15 @@ For this example we will create a standard user interactive menu giving two opti
 
 ````ruby
 $mynewplugin[:action] = $r[:system][:app][:default][:action].clone
-$r[:system][:app][:plugins][:addaction].($mynewplugin, ["Bulk","Bulk word echo function", method(
+````
+
+The first thing we will do is build the structure of the dynamic action menu. This API call will create the :action key and
+the default value will be set to a hash. This location will now allow the user to append additional "module functionality" and
+give the user options on how the functionality is used. Developers are not limited to the following example, creativity is
+encouraged and will give the user a better experience in many cases. In the next block of code we will explore the :Additiona API call to add the 'Bulk' function to the hash. 
+
+````ruby
+ $r[:system][:app][:plugins][:addaction].($mynewplugin, ["Bulk","Bulk word echo function", method(
   def bulk(userword)
    userword.each { | eachletter |
     $mynewplugin[:cmd].(eachletter)
@@ -128,6 +136,17 @@ $r[:system][:app][:plugins][:addaction].($mynewplugin, ["Bulk","Bulk word echo f
   end
  )
 ]
+````
+
+As shown above the newly appended menu contains three fields within an array. These fileds are as described below:
+
+   [NAME,DESCRIPTION,FUNCTION]
+
+The application will then append the array to the hash and map an assigned numerical value as they are accepted. If there are
+no errors within the code and the module is appended, we can move forward with additional functionality is needed. Further we
+will append an additional function to the module hash.
+
+````ruby
 $r[:system][:app][:plugins][:addaction].($mynewplugin, ["Single","Single word echo function", method(
   def single(userword)
    $mynewplugin[:cmd].(userword)
@@ -136,5 +155,6 @@ $r[:system][:app][:plugins][:addaction].($mynewplugin, ["Single","Single word ec
 ]
 ````
 
-The first thing we will do is build the structure of the dynamic action menu. This API call will create the :action key and value will be set to a hash. This location will be processed further within the framework and automatically generate the format as required.
-
+As shown above the module will take a user supplied word i a programatic way and process it, displaying the output to a user.
+This process uses a single function and then can utilize the function in different ways manipulating the data where and how
+needed by the devloper, providing the user a new interface for their datasets. The imagination is your limitation 
