@@ -120,7 +120,7 @@ For this example we will create a standard user interactive menu giving two opti
 
 ````ruby
 $mynewplugin[:action] = $r[:system][:app][:default][:action].clone
-$r[:system][:app][:plugins][:addaction].($reversednsstructure, ["Bulk","Bulk word echo function", method(
+$r[:system][:app][:plugins][:addaction].($mynewplugin, ["Bulk","Bulk word echo function", method(
   def bulk(userword)
    userword.each { | eachletter |
     $mynewplugin[:cmd].(eachletter)
@@ -128,7 +128,7 @@ $r[:system][:app][:plugins][:addaction].($reversednsstructure, ["Bulk","Bulk wor
   end
  )
 ]
-$r[:system][:app][:plugins][:addaction].($reversednsstructure, ["Single","Single word echo function", method(
+$r[:system][:app][:plugins][:addaction].($mynewplugin, ["Single","Single word echo function", method(
   def single(userword)
    $mynewplugin[:cmd].(userword)
   end
