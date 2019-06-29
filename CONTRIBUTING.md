@@ -138,9 +138,14 @@ encouraged and will give the user a better experience in many cases. In the next
 ]
 ````
 
-As shown above the newly appended menu contains three fields within an array. These fileds are as described below:
+As shown above the user must supply the location of your plugin, here we use the shortcut we created earlier, and a newly an
+array which contains three fields. These fileds are as described below:
 
    [NAME,DESCRIPTION,FUNCTION]
+   
+The name is the short description of the new function, in our case we used the word bulk. The following field, is a short
+description that will explain the functionality to the framework user. Last but not least, the handler function which will
+be used to manipulate the newly developed $mynewplugin[:cmd].() function.
 
 The application will then append the array to the hash and map an assigned numerical value as they are accepted. If there are
 no errors within the code and the module is appended, we can move forward with additional functionality is needed. Further we
@@ -154,7 +159,11 @@ $r[:system][:app][:plugins][:addaction].($mynewplugin, ["Single","Single word ec
  )
 ]
 ````
-
 As shown above the module will take a user supplied word i a programatic way and process it, displaying the output to a user.
 This process uses a single function and then can utilize the function in different ways manipulating the data where and how
 needed by the devloper, providing the user a new interface for their datasets. The imagination is your limitation 
+
+If all goes well, when you reload the framework, all the newly developed freatures will be presented to the user and
+functionality will work as expected. With all coding, using traps and rescues are encouraged to ensure functionality as
+needed. Additionally the framework developers have included diagnostic functions which will aid you further in identifying
+bugs within your plugin.
